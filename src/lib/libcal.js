@@ -24,9 +24,7 @@ export async function getToken() {
     body
   });
   if (!response.ok) {
-    throw new Error(
-      `Could not fetch ${path}` + `, received ${response.status}`
-    );
+    throw new Error(`Could not fetch ${path}, received ${response.status}`);
   }
 
   const payload = await response.json();
@@ -41,9 +39,7 @@ export async function getCalendars(token) {
     }
   });
   if (!response.ok) {
-    throw new Error(
-      `Could not fetch ${path}` + `, received ${response.status}`
-    );
+    throw new Error(`Could not fetch ${path}, received ${response.status}`);
   }
   return await response.json();
 }
@@ -59,9 +55,7 @@ export async function getEvents(token, calendarId) {
     }
   );
   if (!response.ok) {
-    throw new Error(
-      `Could not fetch ${path}` + `, received ${response.status}`
-    );
+    throw new Error(`Could not fetch ${path}, received ${response.status}`);
   }
   return await response.json();
 }
